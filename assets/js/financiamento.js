@@ -7,7 +7,6 @@ export class Financiamento {
   constructor(valor, entrada, taxaJuros, prazo) {
     this.#taxaJuros = taxaJuros;
     this.#prazo = prazo;
-    this.#taxaJuros = taxaJuros;
     this.#parcelas.push(new Parcela(0, 0, 0, 0, valor - entrada));
   }
 
