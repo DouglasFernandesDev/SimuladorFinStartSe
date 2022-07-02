@@ -10,10 +10,17 @@ const textoEntrada = document.querySelector('#textoEntrada');
 const textoTaxaJuros = document.querySelector('#textoTaxaJuros');
 const textoPrazo = document.querySelector('#textoPrazo');
 
+const limpaCorpoTabela = () => {
+  while (corpoTabela.firstChild) {
+    corpoTabela.removeChild(corpoTabela.firstChild);
+  }
+}
+
 comCarencia.addEventListener('change', () => comCarencia.checked ?
 listaSuspensa.removeAttribute('hidden') : listaSuspensa.setAttribute('hidden', 'hidden'));
 
 botaoCalcular.addEventListener('click', () => {
+  limpaCorpoTabela();
   const valor = parseFloat(textoValor.value);
   const entrada = parseFloat(textoEntrada.value);
   const taxaJuros = parseFloat(textoTaxaJuros.value);
