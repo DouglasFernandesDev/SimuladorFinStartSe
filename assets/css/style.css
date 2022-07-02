@@ -4,6 +4,10 @@ body {
   font: 11pt Tahoma, Sans-serif;
 }
 
+tr:nth-child(even){
+  background-color: darkviolet;
+}
+
 table, th, td {
   border: 1px solid aquamarine;
   border-collapse: collapse;
