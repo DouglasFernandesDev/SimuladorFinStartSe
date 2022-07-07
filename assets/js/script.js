@@ -26,10 +26,8 @@ botaoCalcular.addEventListener('click', () => {
   const taxaJuros = parseFloat(textoTaxaJuros.value);
   const prazo = parseFloat(textoPrazo.value);
   const carencia = parseInt(listaSuspensa.value);
-  let simulacao;
-  let simulacao2;
-  simulacao = new FinanciamentoCarencia(valor, entrada, taxaJuros, prazo, carencia);
-  simulacao2 = new Financiamento (valor, entrada, taxaJuros, prazo);
+  const simulacao  = new FinanciamentoCarencia(valor, entrada, taxaJuros, prazo, carencia);
+  const simulacao2 = new Financiamento (valor, entrada, taxaJuros, prazo);
   comCarencia.checked ? carencia && simulacao : simulacao2;
   simulacao.calcParcelasMensais();
   simulacao.exibeParcelas();
