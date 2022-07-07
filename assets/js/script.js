@@ -25,14 +25,12 @@ botaoCalcular.addEventListener('click', () => {
   const entrada = parseFloat(textoEntrada.value);
   const taxaJuros = parseFloat(textoTaxaJuros.value);
   const prazo = parseFloat(textoPrazo.value);
+  const carencia = parseInt(listaSuspensa.value);
   let simulacao;
-  if (comCarencia.checked) {
-    const carencia = parseInt(listaSuspensa.value);
-    simulacao = new FinanciamentoCarencia(valor, entrada, taxaJuros, prazo, carencia);
-  } else {
-    simulacao = new Financiamento (valor, entrada, taxaJuros, prazo);
-  };
-//  comCarencia.checked ? const carencia = parseInt(listaSuspensa.value) : comCarencia.checked ? simulacao = new FinanciamentoCarencia(valor, entrada, taxaJuros, prazo, carencia) : simulacao = new Financiamento (valor, entrada, taxaJuros, prazo);
+  let simulacao2;
+  simulacao = new FinanciamentoCarencia(valor, entrada, taxaJuros, prazo, carencia);
+  simulacao2 = new Financiamento (valor, entrada, taxaJuros, prazo);
+  comCarencia.checked ? carencia && simulacao : simulacao2;
   simulacao.calcParcelasMensais();
   simulacao.exibeParcelas();
 });
